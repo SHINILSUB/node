@@ -5,4 +5,5 @@ count++};
 function getCount(){
 return count};
 
-module.export.getCount = getCount;
+module.exports.getCount = getCount;
+module.exports.increase = increase;
