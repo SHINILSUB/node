@@ -12,4 +12,4 @@ setImmediate(()=>{
 console.log('code3');
 process.nextTick(()=>{
     console.log('nxtTick');
-})
+});
