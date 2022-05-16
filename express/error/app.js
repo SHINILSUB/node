@@ -2,6 +2,8 @@ import { Express } from "express";
 import fs from "fs";
 import fsAsync from "fs/promises"
 
+import {} from 'express-async-errors'
+
 const app = express();
 
 app.use(express.json());
@@ -15,11 +17,7 @@ app.get('/file1', (req, res) => {
 });
 
 app.get('/file2', (req, res) => {
-    fs.readFile('/file.txt', (err, data)=>{
-        if(err){
-            res.status(404).send('file not found')
-        }
-    });
+    return fsAsync.readFile('/file.txt');
 });
 
 app.get('/file3', (req, res, next) => {
